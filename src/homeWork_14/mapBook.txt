@@ -1,0 +1,154 @@
+начинаем от меньшего к большему
+1) Создаем класс Author   автор
+в себе он будет содержать строку с именем автора c модификатором Private
+ private String authorName;
+ создаем его конструктор
+  public Author(String authorName) {
+
+        this.authorName = authorName;
+    }
+и гетер
+public Author(String authorName) {
+
+        this.authorName = authorName;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "authorName='" + authorName + '\'' +
+                '}';
+    }
+
+    2) Создаем класс Книга (Book)
+     в нем будет лежать
+     номер каталога   private String catalogNumber;
+     название         private String bookName;
+     и автор          private Author author;
+
+так же делаем конструктор для них
+и гетеры
+
+
+3) создаем класс Книжная полка BookShelf
+в нем будет  идентификационный номер
+      private String idNumber; создаем строкой так как он может быть не только числовым
+       массив из книг (Book)
+     private Book[] booksOnShelf; booksOnShelf переводится  книги на полке
+
+так же делаем конструктор для них
+и гетеры и to string
+
+
+4) делаем класс книжный шкаф BookStorage
+
+В нем будет лежать
+ на какой линии шкафа лежат книги
+      private String line;
+ массив полок с книгами
+ private BookShelf[] bookShelves;
+
+ номер полки
+   private int numberOfShelves;
+   создаем конструктор но только сто бы он не передавал массив Book
+   его то есть массив мы создадим сами в конструкторе на базе класса книжных полок BookShelf
+   this.bookShelves = new BookShelf[numberOfShelves];
+  а конструктор выглядит так
+public BookStorage(String line, int numberOfShelves) {  мы в него передали линию и количество  полок в шкафу
+        this.line = line;
+        this.numberOfShelves = numberOfShelves;
+        this.bookShelves = new BookShelf[numberOfShelves];  создали массив и в него поместили количество полок  numberOfShelves
+    }
+
+
+
+5) Создаем класс Библиотека Library
+В нем будет лежать
+ массив книжный  шкаф
+  private BookStorage[] library;
+ак же делаем конструктор для него
+и гетеры и to string
+    public Library(BookStorage[] library) {
+        this.library = library;
+    }
+
+    public BookStorage[] getLibrary() {
+        return library;
+    }
+
+    @Override
+    public String toString() {
+        return "Library{" + "library=" + Arrays.toString(library) + '}';
+    }
+
+ 6) Создаем сам класс реализации и запуска приложения
+        public class LibraryApp
+     Создавать данные начинаем с самого низа
+    1  Создаем объектЫ на базе класса Author
+    то есть самих авторов книг  автор 1 , автор 2, автор 3 , автор 4
+    и в скобках записываем что должен принять Author c метода то есть имя автора public String getAuthorName() return authorName;
+
+            Author author1 = new Author("Джек Лондон");
+            Author author2 = new Author("Голсуорси");
+            Author author3 = new Author("Жуль Верн");
+            Author author4 = new Author("Пушкин");
+
+         2 Создаем книги на базе класса Book
+          то есть сами книги  книга 1 , книга 2, книга 3 , книга 4
+
+          В скобках указываем значения которые он должен принять с метода Book
+                       номер каталога , название книги , и автора Author author1 автор заходит из строки № 95-98 в зависимости от какую переменную мы напишем
+          public Book(String catalogNumber, String bookName, Author author)
+
+
+
+          Book book1 = new Book("A-001-001", "Белый клык", author1);
+          Book book2 = new Book("A-002-002", "Зов предков", author1);
+          Book book3 = new Book("A-003-003", "Сага о Форсайтах", author2);
+          Book book4 = new Book("A-001-004", "Таинственный остров", author3);
+          Book book5 = new Book("A-005-005", "80 тысяч лье под водой", author3);
+          Book book6 = new Book("A-006-006", "Во круг света за 80 дней", author3);
+          Book book7 = new Book("A-007-007", "Руслан и Людмила", author4);
+          Book book8 = new Book("A-008-008", "Сказка о царе Салтане", author4);
+
+           3 Создаем Книжные полки BookShelf
+           который примет ID номер и массив из книг Book[] в котором будут лежатьь книги book1 book2 book3 и так далее
+
+             // Book[] booksForShelf1 = {book1,book3}; - развернутый вариант равносилен записи new Book[]{book1,book3});
+
+               BookShelf bookShelf1 = new BookShelf("B1", new Book[]{book1,book3});
+               BookShelf bookShelf2 = new BookShelf("C1", new Book[]{book2,book6});
+               BookShelf bookShelf3 = new BookShelf("A1", new Book[]{book4,book5});
+               BookShelf bookShelf4 = new BookShelf("D1", new Book[]{book8,book7});
+
+                4 Создаем книжные шкафы BookStorage
+                 который примет  (Линию Line ,количество полок  numberOfShelves)
+                 BookStorage bookStorage1 = new BookStorage("Left side", 2);
+                 BookStorage bookStorage2 = new BookStorage("Right side", 2);
+
+                    НАЧИНАЕМ ЗАПОЛНЯТЬ
+                 книжный шкаф под названием bookStorage1  хочет обратится к массиву книжных полок getBookShelves и
+                 в элемент нулевой [0] хочу записать книжную полку bookShelf1
+                запись выглядит так
+                bookStorage1.getBookShelves()[0] = bookShelf1;
+                bookStorage1.getBookShelves()[1] = bookShelf2;
+                bookStorage2.getBookShelves()[0] = bookShelf3;
+                bookStorage2.getBookShelves()[1] = bookShelf4;
+                дословно это звучит так
+                Возьми объект (ШКАФ) bookStorage1 который возьмет ссылку getBookShelves на масив BookShelves[]
+                и в нем в нулевой элемент [0] этого массива сохранит ссылку bookShelf1 на полку BookShelf bookShelf1
+
+                  5 Создаем экземпляр класса Библиотека Library и в него передаем массив из книжных шкафов BookStorage[]
+                   в котором будет лежать ШКАФ1 bookStorage1 и ШКАФ2 bookStorage2
+                Library library = new Library(new BookStorage[] {bookStorage1,bookStorage2});
+
+
+
+
+
+
+
