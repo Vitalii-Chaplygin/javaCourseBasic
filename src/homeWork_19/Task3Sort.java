@@ -25,8 +25,10 @@ public class Task3Sort {
 
 
         }
+        System.out.println(Arrays.toString(intArr));
         sotrarray(intArr);
         System.out.println(Arrays.toString(intArr));
+
     }
 
 }
