@@ -12,31 +12,43 @@ public class Task4 {
    для какого из массивов это значение оказалось больше (либо сообщите, что их средние арифметические равны)
      */
     public static void main(String[] args) {
-        int length1 = 5;
-        int[] intArr = new int[length1];
+        int length = 5;
+        int[] intArr = new int[length];
         Random random = new Random();
-        for (int i = 0; i < length1; i++) {
+        for (int i = 0; i < length; i++) {
             intArr[i] = random.nextInt(5) + 1;
         }
-        int length2 = 5;
-        int[] intArr1 = new int[length2];
+
+        int[] intArr1 = new int[length];
         Random random1 = new Random();
-        for (int i = 0; i < length1; i++) {
+        for (int i = 0; i < length; i++) {
             intArr1[i] = random1.nextInt(5 + 1);
         }
-        System.out.println(Arrays.toString(intArr1));
+        System.out.println("Массив intArr1: " + Arrays.toString(intArr1));
         System.out.println("========================");
-        System.out.println(Arrays.toString(intArr));
+        System.out.println("Массив intArr1: " + Arrays.toString(intArr));
 
+        double sumArr1 = 0;
+        double sumArr = 0;
         for (int i = 0; i < intArr.length; i++) {
-            double sumArr =0;
-
+            sumArr = (sumArr + intArr[i]);
+        }
+        for (int i = 0; i < intArr1.length; i++) {
+            sumArr1 = sumArr1 + intArr1[i];
         }
 
+        System.out.println("средние арифметическое значение intArr: "+sumArr / intArr.length);
+        System.out.println("средние арифметическое значение intArr1: "+sumArr1 / intArr1.length);
+        if (sumArr == sumArr1) {
+            System.out.println("средние арифметические значения равны");
+        }
 
+        if (sumArr < sumArr1) {
+            System.out.println("средние арифметическое значение intArr1 > intArr");
+        } else {
+            System.out.println("средние арифметическое значение intArr1 < intArr");
+        }
     }
-
-
 }
 
 
