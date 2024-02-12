@@ -27,6 +27,13 @@ public class Task4 {
         System.out.println(Arrays.toString(intArr1));
         System.out.println("========================");
         System.out.println(Arrays.toString(intArr));
+
+        for (int i = 0; i < intArr.length; i++) {
+            double sumArr =0;
+
+        }
+
+
     }
 
 
