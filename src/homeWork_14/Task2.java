@@ -12,29 +12,19 @@ public class Task2 {
      */
 
     public static void main(String[] args) {
+        int[] array = new int[99];
         int counter = 0;
         for (int i = 0; i <= 99; i++) {
             if (i % 2 != 0)
                 counter++;
             // Определили размер массива
-
         }
-        // System.out.println(counter);
-        int[] arr = new int[counter]; // создали массив
+        System.out.println(counter);
 
-        for (int i = 1, j=0; i <=99; i++) {
-            if (i%2!=0){
-                arr[j]=i;
-                j++;
-                System.out.println(arr[i]);
-
-
-
-
-
-            }
-        }
 
     }
 }
+
+
+
 
