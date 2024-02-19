@@ -25,7 +25,7 @@ public class Task1String {
         System.out.println(str.toLowerCase());
         System.out.println(str.toUpperCase());
 
-        System.out.println(str.indexOf('J'));
+      //  System.out.println(str.indexOf('J'));
         System.out.println(str.substring(14,str.length()-1));
     }
 
