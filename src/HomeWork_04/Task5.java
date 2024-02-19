@@ -3,7 +3,6 @@ package HomeWork_04;
 public class Task5 {
     public static void main(String[] args) {
         int numb10 = 10 ;
-        int numb4 = 4 ;
         int numb3 = 3 ;
         int numb7 = 7 ;
         int numb8 = 8 ;
@@ -19,6 +18,6 @@ public class Task5 {
         int results3 = numb8 % 3;
         System.out.println("Остаток от деления 10/3 = " +results1);
         System.out.println("Остаток от деления 3/3 = " +results2);
-        System.out.println("Остаток от деления 7/3 = " +results3);
+        System.out.println("Остаток от деления 8/3 = " +results3);
     }
 }
