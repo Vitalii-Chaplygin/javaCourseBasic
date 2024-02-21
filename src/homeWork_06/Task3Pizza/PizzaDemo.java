@@ -6,6 +6,7 @@ public class PizzaDemo {
     Pizza pizza2=new Pizza(28,40);
 
      double rezultCalories = pizza2.calcCalories()- pizza1.calcCalories();
-        System.out.println(rezultCalories);
+        System.out.println("В пицце диаметром: "+pizza1.diameter+" - "+pizza1.calcCalories()+" калорий");
+        System.out.println("Если мы купим пиццу диаметром: "+pizza2.diameter+", то съедим больше на "+rezultCalories+" калорий");
     }
 }
