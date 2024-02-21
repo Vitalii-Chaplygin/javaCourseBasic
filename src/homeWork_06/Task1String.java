@@ -14,19 +14,19 @@ public class Task1String {
      */
     public static void main(String[] args) {
         String str = new String("I study Basic Java!");
-        System.out.println( "Последний символ строки: "+str.charAt(str.length() - 1));
-        if (str.contains("Java")){
+        System.out.println("Последний символ строки: " + str.charAt(str.length() - 1));
+        if (str.contains("Java")) {
             System.out.println("Подстрока Java есть");
-        }else {
+        } else {
             System.out.println("подстроки Java нет");
         }
 
-        System.out.println(str.replace("a","o"));
+        System.out.println(str.replace("a", "o"));
         System.out.println(str.toLowerCase());
         System.out.println(str.toUpperCase());
 
-      //  System.out.println(str.indexOf('J'));
-        System.out.println(str.substring(14,str.length()-1));
+        //  System.out.println(str.indexOf('J'));
+        System.out.println(str.substring(14, str.length() - 1));
     }
 
 

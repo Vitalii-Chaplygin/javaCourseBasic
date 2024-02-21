@@ -25,7 +25,7 @@ public class Task2 {
 
         int halfWord1=firstWordLength/2;
         int halfWord2=secondWordLength/2;
-        if (firstWordLength%2!=0){
+        if (firstWordLength % 2 != 0) {
             halfWord1++;
         }
 
