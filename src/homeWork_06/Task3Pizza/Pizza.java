@@ -15,13 +15,7 @@ public class Pizza {
         this.caloriesInSmSquare = caloriesInSmSquare;
     }
 
-    @Override
-    public String toString() {
-        return "Pizza{" +
-                "diameter=" + diameter +
-                ", caloriesInSmSquare=" + caloriesInSmSquare +
-                '}';
-    }
+
 //Пишем метод по вычислению общего количества калорий, который будет возвращать количество калорий
 
     public double calcCalories() {
