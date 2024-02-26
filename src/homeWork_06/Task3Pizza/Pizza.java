@@ -20,7 +20,7 @@ public class Pizza {
 
     public double calcCalories() {
         double pizzaArea = ((diameter * diameter / 4) * Math.PI); // определили площадь пиццы по диаметру (d*d : 4) × π
-        double pizzaCall = pizzaArea * caloriesInSmSquare;
+        double pizzaCall = pizzaArea * caloriesInSmSquare; // вычисляем сколько калорий и возвращаем этот результат
         return pizzaCall;
     }
 
