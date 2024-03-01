@@ -1,7 +1,4 @@
-package homework_33;
-
-import java.util.HashMap;
-import java.util.Map;
+package homework_33.Task2;
 
 public class Main {
     public static void main(String[] args) {
