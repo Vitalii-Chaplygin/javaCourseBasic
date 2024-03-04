@@ -40,31 +40,35 @@ public class MyCollection {
 
     }
 
-    public void removeObject(int index) {
-        for (int i = 0; i < arrayObject.length; i++) {
-            if (arrayObject[i].equals(index)) {
-                arrayObject[i] = arrayObject[size - 1];
-                size--;
-            }
-
+    public void removeObject(Integer index) {
+        if (index < 0 || index >= size) {
+            return;
         }
+
+        for (int i = index; i < size-1; i++) {
+                arrayObject[i] = arrayObject[size - 1];
+            arrayObject[i] = arrayObject[i + 1];
+        }
+        arrayObject[--size] = null;
     }
 
     public void uvelicenieAraay() {
         int newCapacity = arrayObject.length * 2;
         Object[] newArrayOb = new Object[newCapacity];
         for (int i = 0; i < arrayObject.length; i++) {
-            newArrayOb[i] = arrayObject[i];
+            System.arraycopy(arrayObject, 0, newArrayOb, 0, size);
+            arrayObject = newArrayOb;
         }
     }
 
         public static void main (String[]args){
-            MyCollection myCollection = new MyCollection(2);
+            MyCollection myCollection = new MyCollection(1);
             myCollection.addObject(1);
             myCollection.addObject(4);
             myCollection.addObject(7);
             System.out.println(myCollection);
-
+            myCollection.removeObject(0);
+            System.out.println(myCollection);
 
         }
 
