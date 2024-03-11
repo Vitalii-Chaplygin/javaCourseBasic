@@ -21,10 +21,6 @@ public class AppManager {
         studentManager.addCourseToStudent(2, javaCourse);
         studentManager.addCourseToStudent(2, phpCourse);
 
-        List<Student> studentList = studentManager.getStudentsOnCourse("Java");
-        for (Student student : studentList) {
-             System.out.println(student);
 
-        }
     }
 }
