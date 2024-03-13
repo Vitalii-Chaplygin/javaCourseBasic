@@ -9,7 +9,7 @@ public class Main {
 
         ArrayList<Student> studentArrayList = new ArrayList<>();
         studentArrayList.add(new Student("John", 13));
-        studentArrayList.add(new Student("Bill", 12));
+        studentArrayList.add(new Student("Bill", 10));
         studentArrayList.add(new Student("Samm", 25));
         System.out.println(studentArrayList);
         studentArrayList.sort(new StudentCompaire());
