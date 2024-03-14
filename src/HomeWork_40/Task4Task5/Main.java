@@ -19,6 +19,7 @@ public class Main {
                 .sorted(Comparator.comparingInt(Student::getYearOfAdmission))
                 .limit(3)
                 .toList();
+        System.out.println(studentList1);
         studentList1.forEach(student -> System.out.println(student.getName()+" "+ student.getYearOfAdmission()));
 
     }
